@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HeroVSMonster</string>
+    <string name="hero_health">Hero health</string>
+    <string name="hero_damage">Hero damage</string>
+    <string name="hero_defence">Hero defence</string>
+    <string name="hero_attack">Hero attack</string>
+    <string name="monster_health">Monster health</string>
+    <string name="monster_damage">Monster damage</string>
+    <string name="monster_defence">Monster defence</string>
+    <string name="monster_attack">Monster attack</string>
+</resources>
