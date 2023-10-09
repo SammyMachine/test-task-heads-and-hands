@@ -1,6 +1,6 @@
 package com.example.herovsmonster.data.model
 
-open class Entity (
+open class Entity(
     private var attack: Int = 1,
     private var defence: Int = 1,
     private var health: Int = 1,
@@ -19,7 +19,9 @@ open class Entity (
 
     fun getHealth() = health
 
-    fun changeHealth(value: Int) { health = value }
+    fun changeHealth(value: Int) {
+        health = value
+    }
 
     fun getDamage(otherDamage: Int) {
         health -= otherDamage
@@ -30,8 +32,6 @@ open class Entity (
         val modifier = attack - otherDefence + 1
         attackModifier = if (modifier < 0) 1 else modifier
     }
-
-    fun isDied(): Boolean = health == 0
 
     fun attack(): Int {
         var myDamage = 0
@@ -57,7 +57,7 @@ open class Entity (
     }
 
     private fun checkValidInput() {
-        if (attack !in 1 .. 30 || defence !in 1 .. 30 || health < 1 || damage.first > damage.last)
+        if (attack !in 1..30 || defence !in 1..30 || health < 1 || damage.first > damage.last)
             throw IllegalArgumentException("Invalid Input")
     }
 
@@ -72,6 +72,12 @@ open class Entity (
             } else modifier--
         }
         return success
+    }
+
+    companion object {
+        fun checkValidInput(attack: Int, defence: Int, health: Int, damage: IntRange): Boolean =
+            (attack in 1..30 && defence in 1..30 && health > 0 && damage.first <= damage.last)
+
     }
 }
 

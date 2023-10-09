@@ -50,7 +50,7 @@ class StartViewModel : ViewModel() {
         } else flag[2] = 1
         if (!(listOfValues[3].matches(Regex("^[1-9][0-9]*\$")) && listOfValues[4].matches(
                 Regex("^[1-9][0-9]*\$")
-            ) && listOfValues[3].toInt() < listOfValues[4].toInt())
+            ) && listOfValues[3].toInt() <= listOfValues[4].toInt())
         ) {
             flag[3] = 0
             //throw IllegalArgumentException()

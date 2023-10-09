@@ -16,7 +16,6 @@ class Player(
 
     fun restoreHealth() {
         var health = this.getHealth()
-
         if (health in 1 until maxHealth && healCount < 4) {
             health += healBonus
             if (health > maxHealth) health = maxHealth
